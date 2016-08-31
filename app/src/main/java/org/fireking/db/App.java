@@ -2,10 +2,10 @@ package org.fireking.db;
 
 import android.app.Application;
 
+import com.eku.library.AppOrmHelper;
+import com.eku.library.AppSqLiteOpenHelper;
 import com.facebook.stetho.Stetho;
 
-import org.fireking.db.db.AppOrmHelper;
-import org.fireking.db.db.AppSqLiteOpenHelper;
 
 /**
  * Created by 刚 on 2016/8/30.

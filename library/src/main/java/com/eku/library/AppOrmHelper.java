@@ -164,8 +164,7 @@ public class AppOrmHelper {
      *
      * @return 更新数据量
      */
-    public long updateByOrm(String table, Object object, String where, String[] args) {
-        ContentValues contentValues = getContentValueByOrm(object);
+    public long updateByOrm(String table, ContentValues contentValues, String where, String[] args) {
         synchronized (LOCK) {
             long count = 0;
             if (mHelper != null) {
@@ -219,6 +218,9 @@ public class AppOrmHelper {
             try {
                 Object content = field.get(object);
                 if (null != content) {
+                    if (iField.PrimaryKey()) {
+                        continue;
+                    }
                     resultContentValues.put(iField.ColumnName(), content.toString());
                 }
             } catch (Exception e) {

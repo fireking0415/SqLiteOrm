@@ -35,4 +35,10 @@ public @interface SQLiteColumn {
      */
     boolean Nullable() default true;
 
+    /**
+     * 设置是否为主键
+     *
+     * @return
+     */
+    boolean PrimaryKey() default false;
 }

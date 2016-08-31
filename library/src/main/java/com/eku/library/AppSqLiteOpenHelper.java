@@ -74,16 +74,9 @@ public final class AppSqLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 清空数据库
-     */
-    public void truncateTable() {
-
-    }
-
-    /**
      * 删除数据库表
      */
-    public void dropTable() {
-
+    public void dropTable(String tableName) {
+        mGenerater.dropTable(getWritableDatabase(), tableName);
     }
 }

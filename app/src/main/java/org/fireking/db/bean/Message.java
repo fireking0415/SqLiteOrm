@@ -1,6 +1,7 @@
 package org.fireking.db.bean;
 
-import org.fireking.db.db.SQLiteColumn;
+
+import com.eku.library.SQLiteColumn;
 
 /**
  * Created by kima.wang on 2016/8/30.
@@ -9,6 +10,10 @@ public class Message {
 
     public static final String COL_TITLE = "title";
     public static final String COL_MESSAGE = "message";
+    public static final String COL_ID = "_id";
+
+    @SQLiteColumn(ColumnName = COL_ID, ColumnType = "INTEGER", PrimaryKey = true)
+    private long id;
 
     @SQLiteColumn(ColumnName = COL_TITLE, ColumnType = "VARCHAR ", Nullable = false)
     private String title;
@@ -49,5 +54,21 @@ public class Message {
                 ", message='" + message + '\'' +
                 ", type=" + type +
                 '}';
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Message(String title, String message) {
+        this.title = title;
+        this.message = message;
+    }
+
+    public Message() {
     }
 }
