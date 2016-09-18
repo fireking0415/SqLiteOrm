@@ -1,3 +1,3 @@
 # SqLiteOrm
 
-[JavaDoc](../javadoc/index.html)
+[JavaDoc](/javadoc/index.html)
