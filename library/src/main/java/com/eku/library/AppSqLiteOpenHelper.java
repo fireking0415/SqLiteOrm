@@ -5,18 +5,31 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * CODBHelper.java
- * <p/>
- * create by kima.wang on 2016/08/30
+ * 数据库创建、数据表创建、删除操作类
+ *
+ * @author kima.wang
+ * @version 0.1
  */
 public final class AppSqLiteOpenHelper extends SQLiteOpenHelper {
 
-    static final int DATABASE_VERSION = 18;
-    static final String DATABASE_NAME = "eku_android_client_";
+    /**
+     * 数据库当前更迭版本
+     */
+    static int DATABASE_VERSION = 18;
+
+    /**
+     * 数据库名称
+     */
+    static String DATABASE_NAME = "app.db";
+
+    /**
+     * 数据库操作实例
+     */
     static volatile AppSqLiteOpenHelper instance;
 
-    private static final String SPLITE_TAG = "_";
-
+    /**
+     * 数据库解构构建对象
+     */
     private SqLiteGenerater mGenerater;
 
     private int mDatabaseOldVersion;
@@ -25,14 +38,16 @@ public final class AppSqLiteOpenHelper extends SQLiteOpenHelper {
         return instance;
     }
 
-    public static void init(Context context) {
+    public static void init(Context _context, int _dbVersion, String _dbName) {
         if (null == instance) {
             synchronized (AppSqLiteOpenHelper.class) {
                 if (null == instance) {
-                    instance = new AppSqLiteOpenHelper(context);
+                    instance = new AppSqLiteOpenHelper(_context);
                 }
             }
         }
+        DATABASE_VERSION = _dbVersion;
+        DATABASE_NAME = _dbName;
     }
 
     private AppSqLiteOpenHelper(Context context) {

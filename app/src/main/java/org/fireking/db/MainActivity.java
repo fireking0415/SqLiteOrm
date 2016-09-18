@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }).start();
             new Thread(() -> {
-                List<Message> messages = new ArrayList<Message>();
+                List<Message> messages = new ArrayList<>();
                 for (int i = 0; i < 1000; i++) {
                     messages.add(new Message("test0" + i % 4, "message" + i));
                 }

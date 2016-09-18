@@ -7,7 +7,10 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 /**
- * Created by kima.wang on 2016/8/30.
+ * 数据库数据表创建、删除、修改操作
+ *
+ * @author kima.wang
+ * @version 0.1
  */
 public class SqLiteGenerater {
 
@@ -50,7 +53,7 @@ public class SqLiteGenerater {
      */
     public void createTableByOrm(SQLiteDatabase database, String tableName, Class<?> declareClass) {
 
-        StringBuffer sqlString = new StringBuffer();
+        StringBuilder sqlString = new StringBuilder("");
         sqlString.append(String.format(CREATE_TABLE_LABEL, tableName));
 
         /*--获取指定类中配置了SQLiteColumn注解的字段集合--*/

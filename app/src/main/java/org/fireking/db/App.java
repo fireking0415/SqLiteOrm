@@ -16,7 +16,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        AppSqLiteOpenHelper.init(this);
+        AppSqLiteOpenHelper.init(this, 18, "appSample.db");
         AppOrmHelper.getInstance().registerSqLiteDatabase(AppSqLiteOpenHelper.getInstance());
 
         Stetho.initialize(

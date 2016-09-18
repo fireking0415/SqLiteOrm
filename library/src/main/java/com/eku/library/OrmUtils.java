@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 刚 on 2016/8/30.
+ * orm操作反射工具类
+ *
+ * @author kima.wang
+ * @version 0.1
  */
 public class OrmUtils {
 

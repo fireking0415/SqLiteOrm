@@ -6,9 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * SQLiteColumn.java
- * <p/>
- * create by kima.wang on 2016/08/30
+ * 数据库关联实体使用注解
+ * @author kima.wang
+ * @version 0.1
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

@@ -10,7 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by kima.wang on 2016/8/30.
+ * 数据库增删改查基本操作
+ * <p>
+ *
+ * @author kima.wang
+ * @version 0.1
  */
 public class AppOrmHelper {
 
